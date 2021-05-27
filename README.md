@@ -3,8 +3,9 @@ This is a url shortner application. user can  shorten their long url to short on
 
 
 # project name
-url-shortner
+#url-shortner
 #put this files and folders inside /var/www/html
+
 #your local host url will be http://localhost/url-shortner/
 # DB
 #sql file is inside the DB folder. import that in your local server. DB name is 'url_shortner'
