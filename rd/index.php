@@ -1,5 +1,5 @@
 <?php
-require_once '../Modals/Shortner.php';
+require_once '../Models/Shortner.php';
 $ShortnerObj = new Shortner();
 $url = $_SERVER['REQUEST_URI'];
 $parse_url = parse_url($url, PHP_URL_QUERY);

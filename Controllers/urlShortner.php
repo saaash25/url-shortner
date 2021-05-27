@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once '../Modals/Shortner.php';
+require_once '../Models/Shortner.php';
 $ShortnerObj = new Shortner();
 if (isset($_POST['action']) && $_POST['action'] == 'urlShorten') {
     
