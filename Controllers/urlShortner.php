@@ -11,7 +11,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'urlShorten') {
         $randomString .= $charString[rand(0, $charLength - 1)];
     }
     $longURL = $_REQUEST['longUrl'];
-    $shortURL = BASEPATH . '/rd?' . $randomString;
+    $shortURL = BASEPATH . 'rd?' . $randomString;
     $ShortnerObj->URL_DataArray = array(
         'URL_LongUrl' => $longURL,
         'URL_ShortUrl' => $shortURL,

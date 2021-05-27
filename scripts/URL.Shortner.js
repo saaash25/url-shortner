@@ -77,6 +77,14 @@
                     $(".errorLoginMessage").text(" Note: Please fill username and password before submiting!");
                 }
             });
+            $(document).on('keyup', '#admin-login', (e) => {
+                var code = e.keyCode;
+                if (code == 13) {
+                    $('.adminLogin').trigger('click');
+                }
+
+            });
+
         },
         copyShortUrl: () => {
             $(document).on('click', '.url-copy-button', (e) => {
