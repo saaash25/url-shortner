@@ -1,0 +1,17 @@
+.noteMessage{
+    
+}
+.url-shorten-button,.url-copy-button{
+    border-radius: 20px;
+    padding: 0 20px 0 20px;
+    outline: none;
+    background-color: #83408c;
+    font-size: 20px;
+    color:#fff;
+    
+}
+.url-shorten-button:hover,.url-copy-button:hover{
+    background-color:#fff;
+    border:1px solid #83408c;
+    color:#83408c;
+}
