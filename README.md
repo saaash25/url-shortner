@@ -12,13 +12,18 @@ This is a url shortner application. user can  shorten their long url to short on
 
 # config
 #please change phpmyadmin username and password in config page which available in project root directory itself
+
 #defaul user is root
+
 #defaul passord nill
 
 # Login
 #login option is only provide for admin only
+
 #default alogin username and password for login is 
+
 #username: admin
+
 #password:admin
 
 
