@@ -33,6 +33,7 @@ if (!isset($_SESSION['US_Username']) && !isset($_SESSION['US_Id'])) {
                     <div class="row mt-10">
                         <div class="col-12 col-md-12">
                             <div class="shadow-sm  p-3  m-2 bg-white rounded" >
+                                <div class="table-responsive">
                                 <table id="urlListingTable" class="table table-bordered">
                                     <thead>
                                         <tr>
@@ -46,6 +47,7 @@ if (!isset($_SESSION['US_Username']) && !isset($_SESSION['US_Id'])) {
 
                                     </tbody>
                                 </table>
+                                </div>
                             </div>
                         </div>
                     </div>
