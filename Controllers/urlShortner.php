@@ -60,13 +60,21 @@ if (isset($_POST['action']) && $_POST['action'] == 'urlListing') {
     $ShortnerObj->urlListing();
     $URLS = $ShortnerObj->URLS;
     $i = $_REQUEST['start'] + 1;
+    
+    $totalCount=count($URLS);
+    $filterCount=count($URLS);
+    $ShortnerObj->URLS=[];
+    if ($_REQUEST['start'] >= 0 && $_REQUEST['length'] != -1) {
+        $Limit = " LIMIT " . $_REQUEST['start'] . ", " . $_REQUEST['length'];
+    }
+    $ShortnerObj->urlListing($Limit);
+    $URLS = $ShortnerObj->URLS;
     foreach ($URLS as $key => $val) {
         $val->SLNO = $i;
          $val->AddedDate=date('d-m-Y',strtotime($val->URL_AddedDate)); 
         $i++;
     }
-    $totalCount=count($URLS);
-    $filterCount=count($URLS);
+    
     $results = ["draw" => intval($_REQUEST['draw']),
         "recordsTotal" => $totalCount,
         "recordsFiltered" => $filterCount,

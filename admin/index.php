@@ -15,11 +15,11 @@ if (!isset($_SESSION['US_Username']) && !isset($_SESSION['US_Id'])) {
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>URL Shortner</title>
-        <link rel="shortcut icon" href="<?=BASEPATH?>assets/images/favicon.ico">
-        <link rel="stylesheet" href="<?=BASEPATH?>assets/bootstrap/css/bootstrap.min.css" />
-         <link rel="stylesheet" href="<?=BASEPATH?>assets/bootstrap/css/datatables.min.css" />
-        <link rel="stylesheet" href="<?=BASEPATH?>assets/bootstrap/css/dataTables.bootstrap4.min.css" />
-        <link rel="stylesheet" href="<?=BASEPATH?>Styles/custom-style.css" />
+        <link rel="shortcut icon" href="<?= BASEPATH ?>assets/images/favicon.ico">
+        <link rel="stylesheet" href="<?= BASEPATH ?>assets/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="<?= BASEPATH ?>assets/bootstrap/css/datatables.min.css" />
+        <link rel="stylesheet" href="<?= BASEPATH ?>assets/bootstrap/css/dataTables.bootstrap4.min.css" />
+        <link rel="stylesheet" href="<?= BASEPATH ?>Styles/custom-style.css" />
 
     </head>
 
@@ -34,19 +34,19 @@ if (!isset($_SESSION['US_Username']) && !isset($_SESSION['US_Id'])) {
                         <div class="col-12 col-md-12">
                             <div class="shadow-sm  p-3  m-2 bg-white rounded" >
                                 <div class="table-responsive">
-                                <table id="urlListingTable" class="table table-bordered">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col">Long URL</th>
-                                            <th scope="col">Short URL</th>
-                                            <th scope="col">Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
+                                    <table id="urlListingTable" class="table table-bordered" cellspacing="0" width="100%">
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" width="5%">#</th>
+                                                <th scope="col" width="50%">Long URL</th>
+                                                <th scope="col" width="35%">Short URL</th>
+                                                <th scope="col" width="15%">Date</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
 
-                                    </tbody>
-                                </table>
+                                        </tbody>
+                                    </table>
                                 </div>
                             </div>
                         </div>
@@ -54,10 +54,10 @@ if (!isset($_SESSION['US_Username']) && !isset($_SESSION['US_Id'])) {
                 </section>
             </div>
         </main>
-        <script src="<?=BASEPATH?>assets/jquery/jquery.min.js"></script>
-        <script src="<?=BASEPATH?>assets/bootstrap/js/bootstrap.min.js"></script>
-        <script src="<?=BASEPATH?>assets/bootstrap/js/datatables.min.js"></script>
-        <script src="<?=BASEPATH?>scripts/URL.Shortner.js"></script>
+        <script src="<?= BASEPATH ?>assets/jquery/jquery.min.js"></script>
+        <script src="<?= BASEPATH ?>assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="<?= BASEPATH ?>assets/bootstrap/js/datatables.min.js"></script>
+        <script src="<?= BASEPATH ?>scripts/URL.Shortner.js"></script>
         <script>
             var basepath = '<?php echo BASEPATH ?>';
             $(document).ready(function () {

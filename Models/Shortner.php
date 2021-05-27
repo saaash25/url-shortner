@@ -40,9 +40,9 @@ class Shortner {
         return $this->UserDetails = $row;
     }
 
-    function urlListing() {
+    function urlListing($Limit="") {
         GLOBAL $con;
-        $this->SQL = "SELECT *  FROM url WHERE 1";
+        $this->SQL = "SELECT *  FROM url WHERE 1 ".$Limit;
         $result = mysqli_query($con, $this->SQL);
         if ($result->num_rows) {
             while ($row[] = mysqli_fetch_object($result));
