@@ -119,8 +119,8 @@
             var urlParams = {action: 'urlListing'};
             columnData.push(
                     {data: 'SLNO', "width": "5%", "class": "text-center align-middle"},
-                    {data: 'URL_LongUrl', "width": "50%", "class": "text-left align-middle"},
-                    {data: 'URL_ShortUrl', "width": "35%", "class": "text-center align-middle"
+                    {data: 'URL_LongUrl', "width": "60%", "class": "text-left align-middle text-break"},
+                    {data: 'URL_ShortUrl', "width": "25%", "class": "text-left align-middle text-break"
                         , render: function (data, type, row) {
                             return '<a href="' + row.URL_ShortUrl + '" target="_blank">' + row.URL_ShortUrl + '</a>'
                         }},
