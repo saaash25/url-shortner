@@ -13,7 +13,7 @@
                         dataType: "json",
                         success: function (data) {
                             if (data.status) {
-                                console.log(data.shortUrl);
+//                                console.log(data.shortUrl);
                                 $(".longUrl").val("");
                                 $(".shortUrl").val(data.shortUrl);
                             } else {
@@ -132,10 +132,9 @@
                 "serverSide": true,
                 "ordering": false,
                 "autoWidth": false,
-                "order": [[0, null]],
                 "responsive": true,
                 "pageLength": pagelength,
-                "dom": 't<"bottom  col-12"rlip><"clear">',
+                "dom": 'lt<"bottom"rip><"clear">',
                 "ajax": {
                     url: basepath + 'Controllers/urlShortner.php',
                     type: "post",
