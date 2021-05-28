@@ -5,24 +5,30 @@
                 e.preventDefault();
                 var longUrlValue = $(".longUrl").val();
                 if (longUrlValue) {
-                    $(".errorMessage").css('display', 'none');
-                    $.ajax({
-                        url: basepath + 'Controllers/urlShortner.php',
-                        type: "POST",
-                        data: $("#urlShortenForm").serialize() + '&action=urlShorten',
-                        dataType: "json",
-                        success: function (data) {
-                            if (data.status) {
+                    if (URL.Shortner.isUrlValid(longUrlValue)) {
+                        $(".errorMessage").css('display', 'none');
+                        $.ajax({
+                            url: basepath + 'Controllers/urlShortner.php',
+                            type: "POST",
+                            data: $("#urlShortenForm").serialize() + '&action=urlShorten',
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.status) {
 //                                console.log(data.shortUrl);
-                                $(".longUrl").val("");
-                                $(".shortUrl").val(data.shortUrl);
-                            } else {
-                                $(".longUrl").val("");
-                                $(".shortUrl").val("");
+                                    $(".longUrl").val("");
+                                    $(".shortUrl").val(data.shortUrl);
+                                } else {
+                                    $(".longUrl").val("");
+                                    $(".shortUrl").val("");
+                                }
                             }
-                        }
-                    });
+                        });
+                    } else {
+                        $(".errorMessage").text('Note: Invalid Url!');
+                        $(".errorMessage").css('display', 'block');
+                    }
                 } else {
+                    $(".errorMessage").text('Note: Please fill Long URL before submiting!');
                     $(".errorMessage").css('display', 'block');
                 }
 
@@ -53,6 +59,7 @@
                 e.preventDefault();
                 var username = $(".username").val();
                 var password = $(".password").val();
+
                 if (username && password) {
                     $(".errorLoginMessage").css('display', 'none');
                     $.ajax({
@@ -142,6 +149,9 @@
                 },
                 "aoColumns": columnData
             });
+        },
+        isUrlValid: (url) => {
+            return /^(https?|s?ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i.test(url);
         },
         LoadAllFunctions: () => {
             URL.Shortner.createShortUrl();

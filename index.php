@@ -31,7 +31,7 @@ include('conf.php');
                                             <label for="orginalUrl">Long URL</label>
                                             <textarea  type="text" name="longUrl" class="form-control longUrl" id="longUrl"  placeholder="Example: www.youtube.com"></textarea >
                                             <div class="alert alert-danger mt-2 pt-1 pb-1 errorMessage" role="alert" style="display:none">
-                                                Note: Please fill Long URL before submiting!
+                                                
                                             </div>
                                         </div>
                                     </div>
