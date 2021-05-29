@@ -29,7 +29,7 @@ include('conf.php');
                                     <div class="col-12 col-md-12">
                                         <div class="form-group">
                                             <label for="orginalUrl">Long URL</label>
-                                            <textarea  type="text" name="longUrl" class="form-control longUrl" id="longUrl"  placeholder="Example: www.youtube.com"></textarea >
+                                            <textarea  type="text" name="longUrl" class="form-control longUrl" id="longUrl"  placeholder="Example: https://www.youtube.com"></textarea >
                                             <div class="alert alert-danger mt-2 pt-1 pb-1 errorMessage" role="alert" style="display:none">
                                                 
                                             </div>
@@ -49,8 +49,11 @@ include('conf.php');
                                     <div class="col-12 col-md-12">
                                         <div class="form-group">
                                             <label for="orginalUrl">Short URL</label>
-                                            <input type="text" name="shortUrl" class="form-control shortUrl"  id="shortUrl"  placeholder="">
+                                            <input type="text" name="shortUrl" class="form-control shortUrl"  id="shortUrl"  placeholder="" readonly>
                                             <small class="form-text text-muted successNoteMessage">Note: After generating Short URL, it will be visible in above box!</small>
+                                            <div class="alert mt-2 pt-1 pb-1 shortUrlMessage" role="alert" style="display:none">
+                                                fghjfgjhgk
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-10 col-md-12">

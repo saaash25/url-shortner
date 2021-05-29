@@ -101,8 +101,15 @@
                     $temp.val($(".shortUrl").val()).select();
                     document.execCommand("copy");
                     $temp.remove();
+                    $(".shortUrlMessage").attr({style: {'display': 'block'}}).text('URL Copied!').addClass('alert-success');
+                    setTimeout(function () {
+                        $(".shortUrlMessage").attr({style: {'display': 'none'}}).text('').removeClass("alert-success");
+                    }, 3000);
                 } else {
-                    alert('Nothing to Copy')
+                    $(".shortUrlMessage").attr({style: {'display': 'block'}}).text('Nothing to Copy').addClass('alert-danger');
+                    setTimeout(function () {
+                        $(".shortUrlMessage").attr({style: {'display': 'none'}}).text('').removeClass("alert-danger");
+                    }, 3000);
                 }
             });
         },
