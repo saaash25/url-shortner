@@ -4,7 +4,7 @@ require 'Connection.php';
 
 class Shortner {
 
-    var $SQL, $R_Id, $Url_Count, $L_Url, $UserDetails,$URLS;
+    public $SQL, $R_Id, $Url_Count, $L_Url, $UserDetails,$URLS;
 
     function doUrlShorten() {
         GLOBAL $con;
