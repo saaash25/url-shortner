@@ -56,7 +56,7 @@ if (isset($_POST['action']) && $_POST['action'] == 'logout') {
     echo json_encode(array('url' => BASEPATH));
 }
 if (isset($_POST['action']) && $_POST['action'] == 'urlListing') {
-    setcookie('urlLength', $_REQUEST['length']);
+    setcookie('urlLength', $_REQUEST['length'],0,'/; samesite=strict');
     $ShortnerObj->urlListing();
     $URLS = $ShortnerObj->URLS;
     $i = $_REQUEST['start'] + 1;
